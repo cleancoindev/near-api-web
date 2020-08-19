@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Connecting to the NEAR platform</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.14/dist/shoelace/shoelace.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.14/dist/shoelace/shoelace.esm.js"
+        ></script>
+
+        <!-- to connect to the NEAR platform, include a reference to near-api-js -->
+        <script src="https://cdn.jsdelivr.net/gh/nearprotocol/near-api-js/dist/near-api-js.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <sl-button id="connect-button" onclick="connect()"
+                    >Connect</sl-button
+                >
+                <sl-button id="disconnect-button" onclick="disconnect()"
+                    >Disconnect</sl-button
+                >
+            </div>
+            <p id="account-id"></p>
+            <p>NEAR Wallet Connection Demo</p>
+            <div class="send">
+                <sl-input
+                    inputmode="text"
+                    type="text"
+                    placeholder="account.testnet"
+                ></sl-input>
+                <sl-input
+                    inputmode="numeric"
+                    type="number"
+                    placeholder="10"
+                ></sl-input>
+                <sl-spinner id="spinner"></sl-spinner>
+                <sl-button id="send-button" onclick="send()">Send</sl-button>
+            </div>
+        </div>
+    </body>
+    <script src="./app.js"></script>
+</html>
